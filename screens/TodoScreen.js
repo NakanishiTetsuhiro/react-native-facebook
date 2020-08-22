@@ -25,5 +25,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    borderColor: '#2D88FF',
+    borderTopWidth: 80,
   },
 });
