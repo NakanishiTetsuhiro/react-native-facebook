@@ -1,20 +1,20 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
-import AddTodo from '../components/AddTodo'
+import AddPost from '../components/AddPost'
 import TodoList from '../components/TodoList'
 
-export const TodoScreen = () => {
-  const [todos, setTodos] = React.useState([]);
+export const TimelineScreen = () => {
+  const [todos, setPosts] = React.useState([]);
   const [id, setID] = React.useState(1);
 
   return (
     <SafeAreaView style={styles.container}>
-      <AddTodo setTodos={(text) => {
-        setTodos(oldTodos => [...oldTodos, { id: id, text: text }])
+      <AddPost setPosts={(text) => {
+        setPosts(oldTodos => [...oldTodos, { id: id, text: text }])
         setID(id + 1)
       }}
       />
-      <TodoList todos={todos} setTodos={setTodos} />
+      <TodoList todos={todos} setPosts={setPosts} />
     </SafeAreaView>
   );
 }
@@ -22,10 +22,10 @@ export const TodoScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    width: "100%",
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: '#2D88FF',
-    borderTopWidth: 80,
+    backgroundColor: '#e8e9ec',
+    padding: 8
   },
 });
